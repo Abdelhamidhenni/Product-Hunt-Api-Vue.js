@@ -6,7 +6,7 @@
 
   <li class="posts-list-item">
 
-    <span><img :src="proppost.thumbnail.image_url" alt=""></span>
+    <div><img :src="proppost.thumbnail.image_url" alt=""></div>
     <span>{{ proppost.name }}</span>
     <span>{{proppost.votes_count}} upvotes</span>
     <span>{{ proppost.tagline }}</span>
