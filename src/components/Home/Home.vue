@@ -10,7 +10,7 @@
       <p class="app-tagline">The best new products, every day</p>
     </div>
 
-    <posts-list ></posts-list>
+    <posts-list></posts-list>
 
   </div>
 </template>

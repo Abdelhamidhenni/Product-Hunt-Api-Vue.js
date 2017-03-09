@@ -6,15 +6,20 @@
   <div class="wrapper">
 
     <div class="posts-list-filters">
+      <select>
+        <option v-for="day in days"><label>{{ selectDaysLabel(day) }}</label></option>
+      </select>
     </div>
 
     <ul class="posts-list-stats">
+      <li v-for="item in stats">
+        <span>{{ item.count }}</span>
+        <span>{{ item.label }}</span>
+      </li>
     </ul>
 
-    <ul v-for="post in posts" class="posts-list" >
-      <h1>{{post.name}}</h1>
-      <img :src="post.thumbnail.image_url" >
-
+    <ul class="posts-list">
+      <posts-list-item v-for="post in posts" :key="post.id" :proppost="post"></posts-list-item>
     </ul>
 
   </div>
@@ -33,7 +38,7 @@
   export default {
 
     components: {
-      'posts-list-item': PostsListItem,
+      'posts-list-item': PostsListItem
     },
 
     data() {
@@ -73,19 +78,28 @@
       getPosts() {
         // Utilisez axios pour récupérer les posts de l'API ProductHunt
         // Variable à modifier : this.posts
-        axios.get('/v1/posts')
-          .then((response) =>{
-            console.log(response);
-            this.posts = response.data.posts;
+        console.log('getPosts...')
+        axios.get('/posts?days_ago='+this.daysAgo)
+          .then((response) => {
+            console.log(response)
+            this.posts = response.data.posts
+            this.countStats()
           })
           .catch(function (error) {
-            console.log(error);
-          });
+            console.log(error)
+          })
       },
 
       countStats() {
         // Appeler cette méthode pour calculer les stats à chaque fois qu'on récupère les posts
         console.log('countStats...')
+        for (var post in this.posts) {
+          this.stats.posts.count += 1
+          this.stats.votes.count += this.posts[post].votes_count
+          this.stats.comments.count += this.posts[post].comments_count
+          this.stats.makers.count += this.posts[post].makers.length
+        }
+
       },
 
       selectDaysLabel(day) {
@@ -95,11 +109,14 @@
         else if (day === 1) label = 'Yesterday'
         else label = `${day} days ago`
         return label
+      },
+
+      newDaysAgo(day) {
+        this.daysAgo = day
+        console.log(this.daysAgo)
       }
 
-    },
-
-
+    }
 
   }
 
