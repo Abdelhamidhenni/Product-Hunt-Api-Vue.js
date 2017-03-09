@@ -6,10 +6,13 @@
   <div class="wrapper">
 
     <div class="posts-list-filters">
-      <select>
-        <option v-for="day in days"><label>{{ selectDaysLabel(day) }}</label></option>
+      <select v-model="daysAgo" v-on:change="getPosts()">
+        <option v-for="day in days" v-bind:value="day">{{ selectDaysLabel(day) }}</option>
       </select>
+
     </div>
+
+
 
     <ul class="posts-list-stats">
       <li v-for="item in stats">
@@ -79,7 +82,7 @@
         // Utilisez axios pour récupérer les posts de l'API ProductHunt
         // Variable à modifier : this.posts
         console.log('getPosts...')
-        axios.get('/posts?days_ago='+this.daysAgo)
+        axios.get('/posts?days_ago='+ this.daysAgo)
           .then((response) => {
             console.log(response)
             this.posts = response.data.posts
@@ -109,11 +112,6 @@
         else if (day === 1) label = 'Yesterday'
         else label = `${day} days ago`
         return label
-      },
-
-      newDaysAgo(day) {
-        this.daysAgo = day
-        console.log(this.daysAgo)
       }
 
     }
