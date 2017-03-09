@@ -14,12 +14,12 @@
 
 
 
-    <ul class="posts-list-stats">
-      <li v-for="item in stats">
-        <span>{{ item.count }}</span>
-        <span>{{ item.label }}</span>
-      </li>
-    </ul>
+    <div class="posts-list-stats">
+      <ul v-for="item in stats">
+        <li>{{ item.count }}</li>
+        <li>{{ item.label }}</li>
+      </ul>
+    </div>
 
     <ul class="posts-list">
       <posts-list-item v-for="post in posts" :key="post.id" :proppost="post"></posts-list-item>
@@ -60,7 +60,7 @@
           },
           comments: {
             count: 0,
-            label: 'Comments'
+            label: 'Comments '
           },
           makers: {
             count: 0,

@@ -4,13 +4,13 @@
 <!-- HTML -->
 <template>
 
-  <li class="posts-list-item">
+  <ul class="posts-list-item">
 
     <div><img :src="proppost.thumbnail.image_url" alt=""></div>
-    <span>{{ proppost.name }}</span>
-    <span>{{proppost.votes_count}} upvotes</span>
-    <span>{{ proppost.tagline }}</span>
-  </li>
+    <h3>{{ proppost.name }}</h3>
+    <li id="grey">{{proppost.votes_count}} upvotes</li>
+    <li>{{ proppost.tagline }}</li>
+  </ul>
 
 </template>
 
