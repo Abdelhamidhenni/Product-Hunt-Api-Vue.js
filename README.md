@@ -2,11 +2,13 @@
 
 > A Vue.js using ProductHunt API project
 #  First Configuration toDo :
+
 Change Your main-default.js to main.js and add your token
+``` bash
 window.token = 'YOUR TOKEN HERE';
 axios.defaults.baseURL = 'https://api.producthunt.com';
 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-
+```
 
 ## Build Setup
 
@@ -19,7 +21,7 @@ npm run dev
 
 # build for production with minification
 npm run build
-```
+
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
