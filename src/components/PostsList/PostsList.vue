@@ -15,10 +15,10 @@
 
 
     <div class="posts-list-stats">
-      <ul v-for="item in stats">
-        <li>{{ item.count }}</li>
-        <li>{{ item.label }}</li>
-      </ul>
+      <li v-for="item in stats">
+        <div>{{ item.count }}</div>
+        <div>{{ item.label }}</div>
+      </li>
     </div>
 
     <ul class="posts-list">
