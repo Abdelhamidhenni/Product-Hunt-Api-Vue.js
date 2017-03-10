@@ -19,6 +19,7 @@
 <script>
 
   // Import du composant PollsList
+  import App from '../../components/App.vue'
   import PostsList from '../PostsList/PostsList.vue'
 
   export default {
