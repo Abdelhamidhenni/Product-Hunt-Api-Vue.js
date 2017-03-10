@@ -5,11 +5,12 @@
 <template>
 
   <ul class="posts-list-item">
-
+    <a :href="proppost.redirect_url">
     <div><img :src="proppost.thumbnail.image_url" alt=""></div>
     <h3>{{ proppost.name }}</h3>
     <li id="grey">{{proppost.votes_count}} upvotes</li>
-    <li>{{ proppost.tagline }}</li>
+    <li>{{ proppost.tagline }}</li>  </a>
+
   </ul>
 
 </template>
