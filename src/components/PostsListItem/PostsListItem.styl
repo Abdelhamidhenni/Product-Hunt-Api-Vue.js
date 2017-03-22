@@ -1,25 +1,99 @@
 // Import des variables css (à charger dans chaque composant si besoin)
 @import '~css/variables'
 
-// Style de mon composant PostsListItem :
-
-h3
-  color $orange-flame-pea
-
 .posts-list-item
-  width calc(33.3% - 20px)
-  margin 10px
+  width calc(33.33333% - 30px)
   background-color $white
-  height 300px
-  img
-    width 100%
-    height 145px
-    object-fit  cover
-  li
-    margin 10px
-   #grey
-     color $gray-gray
+  margin-top 25px
+  margin-left 15px
+  margin-right 15px
+  box-shadow 0 1px 1px 0 $gray-gray
+
+  @media (max-width: 768px)
+    width calc(50% - 30px)
+
+  @media (max-width: 400px)
+    width calc(100% - 30px)
+  
   a
-    color black
+    cursor pointer
 
+  &__a
+    display block
+    width 100%
+    padding-bottom 38.33%
+    position relative
+    overflow-y hidden
 
+    img
+      position absolute
+      top 50%
+      transform translateY(-50%)
+      left 0
+      width 100%
+
+  &__h2, &__h4, &__p
+    text-align center
+
+  &__h2
+    color $orange-flame-pea
+    padding-top 20px
+    padding-bottom 10px
+    font-weight 700
+    font-size 1.2em
+
+  &__h4
+    padding-left 20px
+    padding-right 20px
+    padding-bottom 20px
+    padding-top 10px
+    font-size .8em
+    line-height 1.5
+    color #000
+
+  &__p
+    color $gray-gray
+    padding-bottom 20px
+    padding-top 4px
+    font-size .75em
+    
+  &__topics
+    padding 4px 20px 20px
+    display flex
+    flex-flow row wrap
+    justify-content center
+    
+    > li
+      margin 2px 3px
+      padding 4px 6px
+      background-color $gray-gray
+
+      > a
+        color $white-alabaster
+
+  &__makers
+    padding 4px 20px 20px
+    font-size .75em
+    text-align center
+
+    > li
+      display inline-block
+      margin 0
+
+      &:not(:first-child)
+        padding 3px 4px 3px 0
+
+      > a
+        color $gray-gray
+        text-decoration underline
+
+li 
+    margin 10px
+    color $gray-gray
+
+.posts-list-stats__li--nbr 
+    color $orange-flame-pea
+    font-size 1.3em
+    font-weight 600
+    text-align center
+// Style de mon composant PostsListItem :
