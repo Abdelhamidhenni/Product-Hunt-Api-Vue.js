@@ -29,9 +29,6 @@
     import _ from 'lodash'
 
     export default {
-
-
-
         data() {
             return {
                 post: null
@@ -48,8 +45,6 @@
                 // Variable à modifier : this.posts
                 axios.get('/posts/' + postId)
                     .then((response) => {
-                        console.log(response.data.post)
-                        console.log(response.data.postId)
                         this.post = response.data.post
 
                     })
@@ -57,7 +52,6 @@
                         console.log(error)
                     })
             }
-
         }
 
     }
