@@ -9,7 +9,6 @@
       <h1 class="app-title">ProductHunt</h1>
       <p class="app-tagline">The best new products, every day</p>
     </div>
-
     <posts-list></posts-list>
 
   </div>
@@ -17,9 +16,7 @@
 
 <!-- JS -->
 <script>
-
   // Import du composant PollsList
-  import App from '../../components/App.vue'
   import PostsList from '../PostsList/PostsList.vue'
 
   export default {
