@@ -5,8 +5,10 @@
 <template>
     <div v-if="post">
         <div class="app-header">
+
         <div class="title">{{post.name}}</div>
         <div class="tagline">{{post.tagline}}</div>
+          <div class="tagline">{{post.user.twitter_username}}</div>
         </div>
         <div class="date">{{post.day}}</div>
         <div class="date">{{post.body}}</div>
