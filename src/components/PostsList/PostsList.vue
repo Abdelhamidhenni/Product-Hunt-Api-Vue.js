@@ -89,14 +89,14 @@
             .catch(function (error) {
               console.log(error)
             })
-        
+
 
         console.log('getPosts...')
       },
 
       countStats(posts) {
         // Appeler cette méthode pour calculer les stats à chaque fois qu'on récupère les posts
-        for (var post in this.posts) {
+        for (let post in this.posts) {
           this.stats.posts.count += 1
           this.stats.votes.count += this.posts[post].votes_count
           this.stats.comments.count += this.posts[post].comments_count
@@ -108,14 +108,14 @@
         // // Calcul du nombre de votes
         // let votesTotal = 0
         // _.each(posts, function(post){
-        //   votesTotal += post.votes_count 
+        //   votesTotal += post.votes_count
         // })
         // this.stats.votes.count = votesTotal
 
         // // Calcul du nombre de commentaires
         // let commentsTotal = 0
         // _.each(posts, function(post){
-        //   commentsTotal += post.comments_count 
+        //   commentsTotal += post.comments_count
         // })
         // this.stats.comments.count = commentsTotal
 

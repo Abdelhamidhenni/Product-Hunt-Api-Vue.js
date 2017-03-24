@@ -8,7 +8,7 @@
             <router-link :to="{ name: 'home_component' }">
                 <h1 class="app-title">ProductHunt</h1>
             </router-link>
-            <p class="app-tagline">Voici les postes de : {{maker.name}}</p>
+            <p class="app-tagline">Posts Of : {{maker.name}}</p>
         </div>
         <div class="wrapper">
             <ul class="posts-list">
