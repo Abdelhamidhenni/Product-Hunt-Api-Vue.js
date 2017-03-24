@@ -21,8 +21,8 @@
 			</li>
 		</ul>
 		<ul class="posts-list-item__makers">
-			<li v-if="!proppost.makers.length">aucun d'auteur référencé</li>
-			<li v-if="proppost.makers.length">par</li>
+			<li v-if="!proppost.makers.length">Without Author</li>
+			<li v-if="proppost.makers.length"></li>
 			<li v-for="(maker, index) in proppost.makers">
 				<router-link v-if="!isInsideMaker" :to="{ name: 'maker_component', params: { makerId: maker.id } }">{{maker.name}}</router-link>
 				<a v-if="isInsideMaker" @click='$parent.getMaker(maker.id)'>{{maker.name}}</a>
