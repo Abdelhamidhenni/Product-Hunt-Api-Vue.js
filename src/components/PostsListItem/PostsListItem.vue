@@ -10,7 +10,7 @@
 			</div>
 			<h2 class="posts-list-item__h2">{{proppost.name}}</h2>
 		</router-link>
-		<p class="posts-list-item__p">{{proppost.votes_count}} upvotes</p>
+		<p class="posts-list-item__p">{{proppost.votes_count}} Votes</p>
 		<h4 class="posts-list-item__h4">{{proppost.tagline}}</h4>
 		<ul class="posts-list-item__topics">
 			<li v-for="topic in proppost.topics" :key="topic.id">
